@@ -1,4 +1,4 @@
-# chat_app_internship
+# Branch International Internship
 
 # How do I get started?
 ## Prerequisites
@@ -30,5 +30,5 @@
   interface.
   * Navigate to http://localhost:5000/admin/agent_dashboard to see the Admin Dashboard.
  
- ## Setup
+ ## Additional Features
    *Figure out a scheme to help agents divide work amongst themselves, and to prevent multiple agents working on the same message at once.
