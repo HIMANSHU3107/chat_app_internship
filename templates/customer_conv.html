@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer message platform</title>
+  <style>
+    .form {
+      width: 50%;
+      border: 2px solid #000;
+      padding: 30px;
+      margin: 50px auto;
+      background-color: #eee;
+      border-radius: 1%;
+    }
+    textarea {
+      line-height: 50px;
+      width: 90%;
+    }
+    select {
+      width: 90%;
+      height: 30px;
+    }
+    .custom_name {
+      width: 90%;
+      line-height: 30px;
+    }
+    .submit_btn {
+      background-color: rgb(55, 162, 75);
+      line-height: 35px;
+            width: 13%;
+            border-radius: 5%;
+            border-color: rgb(55, 162, 75);
+      margin-left: 40%;
+    }
+
+  </style>
+</head>
+<body>
+  <form class="form" action="" method="POST">
+    <textarea name="message" placeholder="Enter message here…"></textarea>
+    <br>
+    <br>
+    <select name="Name">
+      <option value="0">Choose your agent....</option>
+      {% for agent in agents %}
+        <option value="{{agent['agent_id']}}">{{ agent['Name'] }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <br>
+    <input class="custom_name" type="text" name="customer_name" placeholder="Customer name (for new customers)">
+    <br>
+    <br>
+    <input class="submit_btn" type="submit">
+  </form>
+  <hr>
+  {% for message in messages %}
+    <div class="message">
+      <li>
+        {% if message['agent'] %}
+          {{ message['agent_name'] }} (Agent):
+        {% else %}
+          {{ message['customer_name'] }} (Customer):
+        {% endif %}
+        {{  message['Body'] }}
+      </li>
+    </div>
+  {% endfor %}
+</body>
+</html>
+
