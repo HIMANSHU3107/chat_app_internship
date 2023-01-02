@@ -29,3 +29,6 @@
   * Navigate to http://localhost:5000/customer_dashboard to see the Customer Dashboard
   interface.
   * Navigate to http://localhost:5000/admin/agent_dashboard to see the Admin Dashboard.
+ 
+ ## Setup
+   *Figure out a scheme to help agents divide work amongst themselves, and to prevent multiple agents working on the same message at once.
